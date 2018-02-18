@@ -15,7 +15,7 @@ public class Script : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		MatDisplay.SetCameraFoV (41.0f);
+		MatDisplay.SetCameraFoV (41.5f);
 		Image cameraImage = CameraDevice.Instance.GetCameraImage (Image.PIXEL_FORMAT.RGBA8888);
 		if (cameraImage != null) {
 			if (cameraImageMat == null) {
@@ -24,9 +24,9 @@ public class Script : MonoBehaviour {
 
 			cameraImageMat.put (0, 0, cameraImage.Pixels);
 
-			MatDisplay.DisplayMat (cameraImageMat, MatDisplaySettings.BOTTOM_LEFT);
+			MatDisplay.DisplayMat (cameraImageMat, MatDisplaySettings.FULL_BACKGROUND);
 			Imgproc.blur(cameraImageMat, cameraImageMatBlur, new Size (16,16));
-			MatDisplay.DisplayMat (cameraImageMatBlur, MatDisplaySettings.FULL_BACKGROUND);
+			MatDisplay.DisplayMat (cameraImageMatBlur, MatDisplaySettings.BOTTOM_LEFT);
 		}
 
 	}
