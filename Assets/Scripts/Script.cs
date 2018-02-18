@@ -25,8 +25,8 @@ public class Script : MonoBehaviour {
 			cameraImageMat.put (0, 0, cameraImage.Pixels);
 
 			MatDisplay.DisplayMat (cameraImageMat, MatDisplaySettings.FULL_BACKGROUND);
-			Imgproc.blur(cameraImageMat, cameraImageMatBlur, new Size (16,16));
-			MatDisplay.DisplayMat (cameraImageMatBlur, MatDisplaySettings.BOTTOM_LEFT);
+//			Imgproc.blur(cameraImageMat, cameraImageMatBlur, new Size (16,16));
+//			MatDisplay.DisplayMat (cameraImageMatBlur, MatDisplaySettings.BOTTOM_LEFT	);
 		}
 
 	}
