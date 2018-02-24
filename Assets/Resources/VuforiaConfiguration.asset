@@ -53,7 +53,7 @@ MonoBehaviour:
     videoBackgroundShader: {fileID: 15311, guid: 0000000000000000f000000000000000,
       type: 0}
     matteShader: {fileID: 15310, guid: 0000000000000000f000000000000000, type: 0}
-    videoBackgroundEnabled: 1
+    videoBackgroundEnabled: 0
   deviceTracker:
     autoInitTracker: 0
     autoStartTracker: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
     autoInitTracker: 0
     autoStartTracker: 0
   webcam:
-    deviceNameSetInEditor: 'USB Camera #3'
+    deviceNameSetInEditor: 'USB Camera #2'
     flipHorizontally: 0
     turnOffWebCam: 0
     renderTextureLayer: 30
