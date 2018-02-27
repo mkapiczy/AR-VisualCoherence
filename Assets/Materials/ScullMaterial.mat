@@ -60,9 +60,9 @@ Material:
     - _DepthThreshold: 0.002
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Factor1: 100
-    - _Factor2: 100
-    - _Factor3: 100
+    - _Factor1: 50
+    - _Factor2: 50
+    - _Factor3: 50
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

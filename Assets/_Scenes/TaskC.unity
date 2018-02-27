@@ -567,6 +567,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1641175778}
     m_Modifications:
+    - target: {fileID: 13700000, guid: 3424d4e25939b425093c812f476dffb1, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3424d4e25939b425093c812f476dffb1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -614,7 +618,7 @@ Prefab:
     - target: {fileID: 13700000, guid: 3424d4e25939b425093c812f476dffb1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b7d8da44319284eedac5bfda0a3c12b4, type: 2}
+      objectReference: {fileID: 2100000, guid: 1e85045b8e11045e487fcabfba69462f, type: 2}
     - target: {fileID: 100002, guid: 3424d4e25939b425093c812f476dffb1, type: 3}
       propertyPath: m_Name
       value: ScullAvatar
@@ -644,7 +648,6 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b7d8da44319284eedac5bfda0a3c12b4, type: 2}
   - {fileID: 2100000, guid: 1e85045b8e11045e487fcabfba69462f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
