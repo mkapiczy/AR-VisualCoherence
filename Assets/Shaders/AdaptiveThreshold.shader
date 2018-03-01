@@ -1,6 +1,9 @@
 Shader "Custom/AdaptiveThreshold" {
 Properties{
-        
+		_MainTex ("Texture", 2D) = "white" { } 
+       _NoiseTex ("Texture", 2D) = "white" { } 
+        _SpeedX("Speed along X", Range(0, 100)) = 1
+        _SpeedY("Speed along Y", Range(0, 100)) = 1 
     }
 
     SubShader {
@@ -30,14 +33,38 @@ Properties{
     			return OUT;
     		}
 
-    		float4 fragmentShader(vertexToFragment IN) : SV_TARGET {
+    		sampler2D _MainTex;
+    		sampler2D _NoiseTex;
+            float _SpeedX;
+            float _SpeedY;
+
+             float random(half2 uv)
+            {
+				// Pseudorandom noise
+                return frac(sin(dot(uv, float2(45.5432, 78.233))) * 43758.5453);
+            }
+
+    		half4 fragmentShader(vertexToFragment IN) : SV_TARGET {
+    			half2 uv = IN.worldPosition;
+
     			float3 cameraPos = _WorldSpaceCameraPos;
     			float3 direction = normalize(cameraPos - IN.worldPosition);
     			float dotProduct = dot(direction, IN.normal);
     			float result;
     			if(dotProduct < 0.4) result = 0;
     			else result = 1;
-    			return float4(result, result, result, 1);
+
+			
+    			half noiseVal = tex2D(_NoiseTex, uv).r;
+
+    			// offset
+                uv.x = uv.x + noiseVal /_SpeedX + random(uv)/_SpeedX;
+                uv.y = uv.y + noiseVal / _SpeedY + random(uv)/_SpeedY; 
+ 
+        		half4 texcol = tex2D(_MainTex, uv);
+    			texcol.rgb = dot(texcol.rgb, float3(result, result, result));
+
+                return texcol;
     		}
 
 		ENDCG
